@@ -13,6 +13,16 @@
 		B10000000000000000000005 /* CatalogDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000005 /* CatalogDecoder.swift */; };
 		B10000000000000000000006 /* CatalogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000006 /* CatalogClient.swift */; };
 		B10000000000000000000007 /* CatalogEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000007 /* CatalogEnvironment.swift */; };
+		B10000000000000000000008 /* CinemaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000008 /* CinemaTheme.swift */; };
+		B10000000000000000000009 /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000009 /* PageHeader.swift */; };
+		B1000000000000000000000A /* PosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000A /* PosterCard.swift */; };
+		B1000000000000000000000B /* PosterRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000B /* PosterRail.swift */; };
+		B1000000000000000000000C /* StatusViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000C /* StatusViews.swift */; };
+		B1000000000000000000000D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000D /* RootView.swift */; };
+		B1000000000000000000000E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000E /* HomeView.swift */; };
+		B1000000000000000000000F /* CatalogGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000F /* CatalogGridView.swift */; };
+		B10000000000000000000010 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000010 /* SearchView.swift */; };
+		B10000000000000000000011 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000011 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +33,16 @@
 		F10000000000000000000005 /* CatalogDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDecoder.swift; sourceTree = "<group>"; };
 		F10000000000000000000006 /* CatalogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogClient.swift; sourceTree = "<group>"; };
 		F10000000000000000000007 /* CatalogEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogEnvironment.swift; sourceTree = "<group>"; };
+		F10000000000000000000008 /* CinemaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTheme.swift; sourceTree = "<group>"; };
+		F10000000000000000000009 /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
+		F1000000000000000000000A /* PosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCard.swift; sourceTree = "<group>"; };
+		F1000000000000000000000B /* PosterRail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRail.swift; sourceTree = "<group>"; };
+		F1000000000000000000000C /* StatusViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViews.swift; sourceTree = "<group>"; };
+		F1000000000000000000000D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F1000000000000000000000E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F1000000000000000000000F /* CatalogGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogGridView.swift; sourceTree = "<group>"; };
+		F10000000000000000000010 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F10000000000000000000011 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				F10000000000000000000001 /* PerdeApp.swift */,
+				F50000000000000000000008 /* Theme */,
 				F50000000000000000000004 /* Models */,
 				F50000000000000000000005 /* Catalog */,
+				F50000000000000000000007 /* Components */,
+				F50000000000000000000006 /* Screens */,
 				F10000000000000000000002 /* Assets.xcassets */,
 			);
 			path = Perde;
@@ -79,6 +102,37 @@
 				F10000000000000000000007 /* CatalogEnvironment.swift */,
 			);
 			path = Catalog;
+			sourceTree = "<group>";
+		};
+		F50000000000000000000006 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F1000000000000000000000D /* RootView.swift */,
+				F1000000000000000000000E /* HomeView.swift */,
+				F1000000000000000000000F /* CatalogGridView.swift */,
+				F10000000000000000000010 /* SearchView.swift */,
+				F10000000000000000000011 /* DetailView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F50000000000000000000007 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000009 /* PageHeader.swift */,
+				F1000000000000000000000A /* PosterCard.swift */,
+				F1000000000000000000000B /* PosterRail.swift */,
+				F1000000000000000000000C /* StatusViews.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F50000000000000000000008 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000008 /* CinemaTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 
@@ -156,6 +210,16 @@
 				B10000000000000000000005 /* CatalogDecoder.swift in Sources */,
 				B10000000000000000000006 /* CatalogClient.swift in Sources */,
 				B10000000000000000000007 /* CatalogEnvironment.swift in Sources */,
+				B10000000000000000000008 /* CinemaTheme.swift in Sources */,
+				B10000000000000000000009 /* PageHeader.swift in Sources */,
+				B1000000000000000000000A /* PosterCard.swift in Sources */,
+				B1000000000000000000000B /* PosterRail.swift in Sources */,
+				B1000000000000000000000C /* StatusViews.swift in Sources */,
+				B1000000000000000000000D /* RootView.swift in Sources */,
+				B1000000000000000000000E /* HomeView.swift in Sources */,
+				B1000000000000000000000F /* CatalogGridView.swift in Sources */,
+				B10000000000000000000010 /* SearchView.swift in Sources */,
+				B10000000000000000000011 /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
