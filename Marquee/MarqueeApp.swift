@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct PerdeApp: App {
+struct MarqueeApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()

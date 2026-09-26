@@ -10,7 +10,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 28) {
                 PageHeader(
                     eyebrow: "TURKEY STORE",
-                    title: "Perde",
+                    title: "Marquee",
                     subtitle: "Movies and series at the top of the Turkey chart."
                 )
                 .padding(.bottom, 12)

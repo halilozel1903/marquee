@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B10000000000000000000001 /* PerdeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* PerdeApp.swift */; };
+		B10000000000000000000001 /* MarqueeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* MarqueeApp.swift */; };
 		B10000000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000002 /* Assets.xcassets */; };
 		B10000000000000000000004 /* CatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000004 /* CatalogItem.swift */; };
 		B10000000000000000000005 /* CatalogDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000005 /* CatalogDecoder.swift */; };
@@ -26,9 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F10000000000000000000001 /* PerdeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerdeApp.swift; sourceTree = "<group>"; };
+		F10000000000000000000001 /* MarqueeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeApp.swift; sourceTree = "<group>"; };
 		F10000000000000000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F10000000000000000000003 /* Perde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perde.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000003 /* Marquee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marquee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10000000000000000000004 /* CatalogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItem.swift; sourceTree = "<group>"; };
 		F10000000000000000000005 /* CatalogDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDecoder.swift; sourceTree = "<group>"; };
 		F10000000000000000000006 /* CatalogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogClient.swift; sourceTree = "<group>"; };
@@ -59,15 +59,15 @@
 		F50000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				F50000000000000000000002 /* Perde */,
+				F50000000000000000000002 /* Marquee */,
 				F50000000000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F50000000000000000000002 /* Perde */ = {
+		F50000000000000000000002 /* Marquee */ = {
 			isa = PBXGroup;
 			children = (
-				F10000000000000000000001 /* PerdeApp.swift */,
+				F10000000000000000000001 /* MarqueeApp.swift */,
 				F50000000000000000000008 /* Theme */,
 				F50000000000000000000004 /* Models */,
 				F50000000000000000000005 /* Catalog */,
@@ -75,13 +75,13 @@
 				F50000000000000000000006 /* Screens */,
 				F10000000000000000000002 /* Assets.xcassets */,
 			);
-			path = Perde;
+			path = Marquee;
 			sourceTree = "<group>";
 		};
 		F50000000000000000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F10000000000000000000003 /* Perde.app */,
+				F10000000000000000000003 /* Marquee.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A50000000000000000000001 /* Perde */ = {
+		A50000000000000000000001 /* Marquee */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E50000000000000000000002 /* Build configuration list for PBXNativeTarget "Perde" */;
+			buildConfigurationList = E50000000000000000000002 /* Build configuration list for PBXNativeTarget "Marquee" */;
 			buildPhases = (
 				B50000000000000000000001 /* Sources */,
 				B50000000000000000000003 /* Frameworks */,
@@ -151,9 +151,9 @@
 			);
 			dependencies = (
 			);
-			name = Perde;
-			productName = Perde;
-			productReference = F10000000000000000000003 /* Perde.app */;
+			name = Marquee;
+			productName = Marquee;
+			productReference = F10000000000000000000003 /* Marquee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E50000000000000000000001 /* Build configuration list for PBXProject "Perde" */;
+			buildConfigurationList = E50000000000000000000001 /* Build configuration list for PBXProject "Marquee" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,7 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A50000000000000000000001 /* Perde */,
+				A50000000000000000000001 /* Marquee */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B10000000000000000000001 /* PerdeApp.swift in Sources */,
+				B10000000000000000000001 /* MarqueeApp.swift in Sources */,
 				B10000000000000000000004 /* CatalogItem.swift in Sources */,
 				B10000000000000000000005 /* CatalogDecoder.swift in Sources */,
 				B10000000000000000000006 /* CatalogClient.swift in Sources */,
@@ -353,7 +353,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Perde;
+				INFOPLIST_KEY_CFBundleDisplayName = Marquee;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -363,7 +363,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perde.catalog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marquee.catalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
@@ -387,7 +387,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Perde;
+				INFOPLIST_KEY_CFBundleDisplayName = Marquee;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,7 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.perde.catalog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marquee.catalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
@@ -411,7 +411,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E50000000000000000000001 /* Build configuration list for PBXProject "Perde" */ = {
+		E50000000000000000000001 /* Build configuration list for PBXProject "Marquee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D50000000000000000000001 /* Debug */,
@@ -420,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E50000000000000000000002 /* Build configuration list for PBXNativeTarget "Perde" */ = {
+		E50000000000000000000002 /* Build configuration list for PBXNativeTarget "Marquee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D50000000000000000000003 /* Debug */,
