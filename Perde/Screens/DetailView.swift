@@ -114,17 +114,33 @@ struct DetailView: View {
                 .padding(.top, 8)
             }
         case .failed:
-            ErrorStateView(
-                title: "Couldn't load details",
-                message: "The synopsis didn't come through. Check the connection and try again.",
-                retry: { retryToken += 1 }
-            )
+            VStack(alignment: .leading, spacing: 12) {
+                if let synopsis = item.synopsis {
+                    Text(synopsis)
+                        .font(.title3)
+                        .lineSpacing(6)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                ErrorStateView(
+                    title: "Couldn't load details",
+                    message: "The store listing didn't come through. Check the connection and try again.",
+                    retry: { retryToken += 1 }
+                )
+            }
         case .missing:
-            EmptyStateView(
-                symbol: "film",
-                title: "Unavailable in this store",
-                message: "This title has no Turkey store listing to show."
-            )
+            VStack(alignment: .leading, spacing: 12) {
+                if let synopsis = item.synopsis {
+                    Text(synopsis)
+                        .font(.title3)
+                        .lineSpacing(6)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                EmptyStateView(
+                    symbol: "film",
+                    title: "Unavailable in this store",
+                    message: "This title has no Turkey store listing to open."
+                )
+            }
         case .loaded:
             Text(displaySynopsis ?? "No synopsis is available for this title.")
                 .font(.title3)
