@@ -1,6 +1,6 @@
 import Foundation
 
-enum MediaKind: String, Hashable {
+enum MediaKind: String, Hashable, Sendable {
     case movie
     case series
 
@@ -14,7 +14,7 @@ enum MediaKind: String, Hashable {
     }
 }
 
-struct CatalogItem: Identifiable, Hashable {
+struct CatalogItem: Identifiable, Hashable, Sendable {
     let id: String
     let title: String
     let artistName: String
@@ -26,7 +26,7 @@ struct CatalogItem: Identifiable, Hashable {
     let rank: Int?
 }
 
-struct CatalogDetail: Hashable {
+struct CatalogDetail: Hashable, Sendable {
     let id: String
     let title: String
     let artistName: String

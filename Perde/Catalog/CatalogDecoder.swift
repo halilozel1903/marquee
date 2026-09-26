@@ -201,8 +201,18 @@ enum JSONValue {
             return .number(value.doubleValue)
         case let value as [Any]:
             return .array(value.map(wrap))
+        case let value as NSArray:
+            return .array(value.map { wrap($0) })
         case let value as [String: Any]:
             return .object(value.mapValues(wrap))
+        case let value as NSDictionary:
+            var object: [String: JSONValue] = [:]
+            for (key, nested) in value {
+                if let key = key as? String {
+                    object[key] = wrap(nested)
+                }
+            }
+            return .object(object)
         default:
             return .null
         }
