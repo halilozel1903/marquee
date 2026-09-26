@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B10000000000000000000001 /* PerdeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* PerdeApp.swift */; };
 		B10000000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000002 /* Assets.xcassets */; };
+		B10000000000000000000004 /* CatalogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000004 /* CatalogItem.swift */; };
+		B10000000000000000000005 /* CatalogDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000005 /* CatalogDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F10000000000000000000001 /* PerdeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerdeApp.swift; sourceTree = "<group>"; };
 		F10000000000000000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10000000000000000000003 /* Perde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perde.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000004 /* CatalogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItem.swift; sourceTree = "<group>"; };
+		F10000000000000000000005 /* CatalogDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXGroup;
 			children = (
 				F10000000000000000000001 /* PerdeApp.swift */,
+				F50000000000000000000004 /* Models */,
+				F50000000000000000000005 /* Catalog */,
 				F10000000000000000000002 /* Assets.xcassets */,
 			);
 			path = Perde;
@@ -51,6 +57,22 @@
 				F10000000000000000000003 /* Perde.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F50000000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000004 /* CatalogItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F50000000000000000000005 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000005 /* CatalogDecoder.swift */,
+			);
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 
@@ -124,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B10000000000000000000001 /* PerdeApp.swift in Sources */,
+				B10000000000000000000004 /* CatalogItem.swift in Sources */,
+				B10000000000000000000005 /* CatalogDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
