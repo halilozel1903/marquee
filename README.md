@@ -25,10 +25,20 @@ The interface is dark, built for a 10-foot distance, and uses the tvOS focus eng
 
 1. Open `Marquee.xcodeproj` in Xcode.
 2. Select the **Marquee** scheme.
-3. Choose an Apple TV simulator as the run destination.
+3. In the destination menu beside the scheme, choose an Apple TV simulator. Do not leave it on **Any tvOS Device**.
 4. Press Run.
 
 The simulator target is configured with `CODE_SIGN_IDENTITY = -`, so a development team is not required. Installing on a physical Apple TV requires your own team under Signing & Capabilities.
+
+### No tvOS simulator in the destination menu
+
+Xcode shows **No supported tvOS devices are available** when the tvOS simulator platform is not installed, or when no Apple TV simulator has been created. Marquee cannot run on a Mac or an iPhone destination.
+
+1. Open **Xcode → Settings → Platforms** (labeled **Components** in older Xcode).
+2. Download **tvOS 17** or a newer tvOS simulator.
+3. After the download finishes, open **Window → Devices and Simulators → Simulators**.
+4. Click **+**, set Device Type to **Apple TV**, and set OS to the tvOS version you downloaded.
+5. Back in the toolbar, set the run destination to that Apple TV simulator and press Run.
 
 ## Project layout
 
