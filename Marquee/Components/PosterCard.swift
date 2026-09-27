@@ -51,8 +51,6 @@ struct PosterCard: View {
                     .frame(width: CinemaTheme.posterWidth, alignment: .leading)
             }
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(accessibilityText)
     }
 
     @ViewBuilder
@@ -83,6 +81,23 @@ struct PosterCard: View {
         }
     }
 
+}
+
+struct PosterLink: View {
+    let item: CatalogItem
+    var showsKind = false
+    var focusedID: FocusState<String?>.Binding
+
+    var body: some View {
+        NavigationLink(value: item) {
+            PosterCard(item: item, showsKind: showsKind)
+        }
+        .buttonStyle(PosterFocusStyle())
+        .focused(focusedID, equals: item.id as String?)
+        .zIndex(focusedID.wrappedValue == item.id ? 1 : 0)
+        .accessibilityLabel(accessibilityText)
+    }
+
     private var accessibilityText: String {
         var parts = [item.title]
         if !item.artistName.isEmpty {
@@ -95,14 +110,31 @@ struct PosterCard: View {
     }
 }
 
-struct PosterLink: View {
-    let item: CatalogItem
-    var showsKind = false
+/// Card-style buttons inside a tvOS scroll view clip their focus effect and stop
+/// receiving the remote. This style draws the highlight itself.
+private struct PosterFocusStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        PosterFocusLabel(configuration: configuration)
+    }
+}
+
+private struct PosterFocusLabel: View {
+    let configuration: ButtonStyleConfiguration
+    @Environment(\.isFocused) private var isFocused
 
     var body: some View {
-        NavigationLink(value: item) {
-            PosterCard(item: item, showsKind: showsKind)
-        }
-        .buttonStyle(.card)
+        configuration.label
+            .padding(10)
+            .background(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .fill(Color.white.opacity(isFocused ? 0.08 : 0))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .strokeBorder(CinemaTheme.accent, lineWidth: isFocused ? 5 : 0)
+            )
+            .scaleEffect(isFocused || configuration.isPressed ? 1.06 : 1)
+            .shadow(color: .black.opacity(isFocused ? 0.55 : 0), radius: isFocused ? 28 : 0, y: isFocused ? 16 : 0)
+            .animation(.easeOut(duration: 0.16), value: isFocused)
     }
 }

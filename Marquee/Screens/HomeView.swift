@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.catalogClient) private var client
+    @FocusState private var focusedID: String?
     @State private var movies: SectionPhase = .loading
     @State private var series: SectionPhase = .loading
 
@@ -32,10 +33,12 @@ struct HomeView: View {
             .padding(.top, CinemaTheme.topPadding)
             .padding(.bottom, CinemaTheme.bottomPadding)
         }
+        .scrollClipDisabled()
         .cinemaScreen()
         .navigationDestination(for: CatalogItem.self) { item in
             DetailView(item: item)
         }
+        .defaultFocus($focusedID, preferredID)
         .task {
             await loadAll()
         }
@@ -64,10 +67,19 @@ struct HomeView: View {
                     message: emptyMessage
                 )
             case .loaded(let items):
-                PosterRail(items: items)
+                PosterRail(items: items, focusedID: $focusedID)
             }
         }
-        .focusSection()
+    }
+
+    private var preferredID: String? {
+        if case .loaded(let items) = movies, let id = items.first?.id {
+            return id
+        }
+        if case .loaded(let items) = series, let id = items.first?.id {
+            return id
+        }
+        return nil
     }
 
     private func loadAll() async {
@@ -81,6 +93,9 @@ struct HomeView: View {
         do {
             let items = try await client.topMovies()
             movies = items.isEmpty ? .empty : .loaded(items)
+            if focusedID == nil {
+                focusedID = items.first?.id
+            }
         } catch {
             guard !CatalogFailure.isCancellation(error) else { return }
             movies = .failed
@@ -92,6 +107,9 @@ struct HomeView: View {
         do {
             let items = try await client.topSeries()
             series = items.isEmpty ? .empty : .loaded(items)
+            if focusedID == nil {
+                focusedID = items.first?.id
+            }
         } catch {
             guard !CatalogFailure.isCancellation(error) else { return }
             series = .failed

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SearchView: View {
     @Environment(\.catalogClient) private var client
+    @FocusState private var focusedID: String?
     @State private var query = ""
     @State private var phase: SearchPhase = .prompt
     @State private var retryToken = 0
@@ -13,30 +14,29 @@ struct SearchView: View {
                     title: "Search",
                     subtitle: "Find a movie or series in the Turkey store."
                 )
-                searchField
                 results
             }
             .padding(.horizontal, CinemaTheme.horizontalPadding)
             .padding(.top, CinemaTheme.topPadding)
             .padding(.bottom, CinemaTheme.bottomPadding)
         }
+        .scrollClipDisabled()
         .cinemaScreen()
         .navigationDestination(for: CatalogItem.self) { item in
             DetailView(item: item)
         }
+        .searchable(text: $query, prompt: "Movie or series name")
+        .defaultFocus($focusedID, preferredID)
         .task(id: searchToken) {
             await runSearch()
         }
     }
 
-    private var searchField: some View {
-        TextField("Movie or series name", text: $query)
-            .font(.title3)
-            .padding(.horizontal, 24)
-            .padding(.vertical, 18)
-            .background(CinemaTheme.raised)
-            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .frame(maxWidth: 820, alignment: .leading)
+    private var preferredID: String? {
+        if case .results(let items) = phase {
+            return items.first?.id
+        }
+        return nil
     }
 
     @ViewBuilder
@@ -46,7 +46,7 @@ struct SearchView: View {
             EmptyStateView(
                 symbol: "magnifyingglass",
                 title: "Search the catalog",
-                message: "Enter at least two letters. Results update from the Turkey store as you type."
+                message: "Move to Search and enter at least two letters. Results update from the Turkey store as you type."
             )
         case .loading:
             LoadingStateView(
@@ -70,7 +70,7 @@ struct SearchView: View {
                 Text(resultCount(items.count))
                     .font(.headline)
                     .foregroundStyle(.secondary)
-                PosterGrid(items: items, showsKind: true)
+                PosterGrid(items: items, showsKind: true, focusedID: $focusedID)
             }
         }
     }

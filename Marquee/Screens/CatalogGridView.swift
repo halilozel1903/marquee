@@ -4,6 +4,7 @@ struct CatalogGridView: View {
     let kind: MediaKind
 
     @Environment(\.catalogClient) private var client
+    @FocusState private var focusedID: String?
     @State private var phase: SectionPhase = .loading
 
     var body: some View {
@@ -16,10 +17,12 @@ struct CatalogGridView: View {
             .padding(.top, CinemaTheme.topPadding)
             .padding(.bottom, CinemaTheme.bottomPadding)
         }
+        .scrollClipDisabled()
         .cinemaScreen()
         .navigationDestination(for: CatalogItem.self) { item in
             DetailView(item: item)
         }
+        .defaultFocus($focusedID, preferredID)
         .task {
             await load()
         }
@@ -39,8 +42,15 @@ struct CatalogGridView: View {
                 message: emptyMessage
             )
         case .loaded(let items):
-            PosterGrid(items: items)
+            PosterGrid(items: items, focusedID: $focusedID)
         }
+    }
+
+    private var preferredID: String? {
+        if case .loaded(let items) = phase, let id = items.first?.id {
+            return id
+        }
+        return nil
     }
 
     private var title: String {
@@ -75,6 +85,9 @@ struct CatalogGridView: View {
         do {
             let items = try await fetch()
             phase = items.isEmpty ? .empty : .loaded(items)
+            if focusedID == nil {
+                focusedID = items.first?.id
+            }
         } catch {
             guard !CatalogFailure.isCancellation(error) else { return }
             phase = .failed

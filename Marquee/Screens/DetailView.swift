@@ -5,6 +5,7 @@ struct DetailView: View {
 
     @Environment(\.catalogClient) private var client
     @Environment(\.openURL) private var openURL
+    @FocusState private var isStoreFocused: Bool
     @State private var detail: CatalogDetail?
     @State private var phase: DetailPhase = .loading
     @State private var retryToken = 0
@@ -20,6 +21,7 @@ struct DetailView: View {
             .padding(.bottom, CinemaTheme.bottomPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .scrollClipDisabled()
         .cinemaScreen()
         .task(id: "\(item.id)|\(retryToken)") {
             await load()
@@ -89,7 +91,9 @@ struct DetailView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(CinemaTheme.button)
+                .focused($isStoreFocused)
                 .padding(.top, 8)
+                .onAppear { isStoreFocused = true }
             }
         }
         .frame(maxWidth: 900, alignment: .leading)
